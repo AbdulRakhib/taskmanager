@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+    <meta charset="UTF-8" />
+    <title> Task Management </title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/min.css') }}">
+</head>
+<body>
+    <section class="container-fluid no-padding">
+        <div class="row wrapper no-padding">
+            <div class="col-xl-1 col-sm-2">
+                <nav class="menu-left">
+                    <ul class="list">
+                        <li>
+                            <a href="{{ url_for('index') }}" title="" class = "active">
+                                <span class="icon flaticon-home"></span>
+                                <span class="text">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ url_for('addTask') }}" title="">
+                                <span class="icon flaticon-notepad-1"></span>
+                                <span class="text">Add Task</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" title="">
+                                <span class="icon flaticon-diploma"></span>
+                                <span class="text">SLAs / Certificate</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-xl-11 col-sm-10">
+                <div class="main-content">
+                    <header class="header-content">
+                        <div class="search">
+                            <span class="icon flaticon-search color-fff"></span>
+                            <input type="text" placeholder="Search" name="search" id="search">
+                        </div>
+
+                        <ul class="list list-inline">
+                            <li>
+                                <a href="{{ url_for('index') }}" title="">
+                                    <span class="state blue"></span>
+                                    <span>All</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">
+                                    <span class="state red"></span>
+                                    <span>In Progress</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">
+                                    <span class="state yellow"></span>
+                                    <span>Pending</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" title="">
+                                    <span class="state green"></span>
+                                    <span>Completed</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="action">
+                            <a href="{{ url_for('addTask') }}" title="New Task">New Task</a>
+                            <button class="btn btn-blue">New Board <span class="flaticon-add"></span></button>
+                        </div>
+                        <div id="boardNameModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h3>Enter New Board Name</h3>
+                                <input type="text" id="boardNameInput" placeholder="Board Name" />
+                                <button id="createBoardButton">Create Board</button>
+                            </div>
+                        </div>
+                    </header>
+                    <div class="dashboard">
+                        <div class="row">
+                            <!-- Pending Board -->
+                            <div class="col-xl-4 col-sm-6" id="pending-board">
+                                <div class="board">
+                                    <article class="board yellow">
+                                        <header>
+                                            <h4>Pending <span>(0)</span></h4>
+                                        </header>
+                                        <div class="board-content">
+                                            <ul class="list">
+                                                <!-- Tasks for Pending Board go here -->
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <!-- In Progress Board -->
+                            <div class="col-xl-4 col-sm-6" id="in-progress-board">
+                                <div class="board">
+                                    <article class="board red">
+                                        <header>
+                                            <h4>In Progress <span>(0)</span></h4>
+                                        </header>
+                                        <div class="board-content">
+                                            <ul class="list">
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+
+                            <!-- Completed Board -->
+                            <div class="col-xl-4 col-sm-6" id="completed-board">
+                                <div class="board">
+                                    <article class="board green">
+                                        <header>
+                                            <h4>Completed <span>(0)</span></h4>
+                                        </header>
+                                        <div class="board-content">
+                                            <ul class="list">
+                                            </ul>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

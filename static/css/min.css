@@ -1,0 +1,627 @@
+@import 'Utils/normalize.css';
+@import '../lib/bootstrap-4/bootstrap-grid.min.css';
+@import '../lib/flaticon/flaticon.css';
+@import '../lib/animation/animate.min.css';
+/* Custom Font */
+@import '../fonts/iransans.css';
+/* core css */
+@import 'Utils/core.css';@import 'Utils/color.css';@import 'Utils/spacers.css';@import 'Utils/transition.css';
+
+body {background: #F1F0E8;font-size: 13px;overflow-x: hidden;direction: ltr;text-align: left;}
+* {font-family: 'iransans', sans-serif;font-weight: 300;}
+
+.effect {
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+    height: 100%;
+    background: #e4b9ff;
+}
+
+#main-header {
+
+    height: auto;
+    max-height: 60px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    background: #ffffff;
+   
+}
+
+#main-header .search {
+    height: 50px;
+    background: #ffffff;
+    text-align: center;
+    width: 400px;
+    display: flex;
+    border-radius: 20px;
+    margin-left: 150px;
+}
+
+#main-header .search input#search {
+    background: #ffffff;
+    border: none;
+    color: #000000;
+    font-size: 15px;
+    font-weight: 500;
+    height: 100%;
+    width: 300px;
+}
+
+#main-header .icon:before {
+    line-height: 75px;
+    margin: 0 20px 0 30px;
+    font-size: 23px;
+}
+
+#main-header .account figure {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#main-header .account figcaption {
+    color: #000000;
+    margin: auto 10px;
+
+}
+
+#main-header .account .avatar {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #222;
+}
+.wrapper .menu-left {
+    padding: 80px 10px;
+    width: 130px;
+    background-color: #F1F0E8;
+    margin-top: 0px;
+}
+
+.wrapper .menu-left .list li {
+    text-align: center;
+    width: 100%;
+    margin: 30px 10px;
+    margin-top: 0px;
+}
+
+.wrapper .menu-left .list li a {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    font-size: 13px;
+}
+
+.wrapper .menu-left .list li a.active .icon:before {
+    color: #38c3d5;
+}
+
+.wrapper .menu-left .list li a.active .text {
+    color: #000000;
+}
+
+.wrapper .menu-left .list li a .icon:before {
+    margin: 20px;
+    color: #000000;
+    font-size: 28px;
+}
+
+.wrapper .menu-left .list li a .text {
+    margin: 10px 0;
+}
+
+.wrapper .main-content {
+    background: #b9c3c6;
+    position: relative;
+    right: -20px;
+    margin-right: 30px;
+    margin-top: 10px;
+   border-radius: 10px;
+    display: flex;
+  
+    height: 700px;
+}
+
+.wrapper .main-content .header-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    background: #224a57;
+    margin-top: -20px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+   
+}
+
+.wrapper .main-content .header-content .action .btn {
+    line-height: 20px;
+    border-radius: 0;
+    width: 180px;
+    font-weight: 700;
+    background: #4378eb;
+    margin-right: 15px;
+}
+
+.wrapper .main-content .header-content .action a {
+    margin: 0 20px;
+    color: #fff;
+}
+
+.wrapper .main-content .header-content .action a:hover{
+    margin: 0 20px;
+    color: #1ec3ed;
+}
+
+.wrapper .main-content .header-content .list li a {
+    color: #ccc;
+    margin: 25px 10px 0 10px;
+    display: flex;
+}
+
+.wrapper .main-content .header-content .list li a .state {
+    border: 3px solid #eee;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+
+.wrapper .main-content .header-content .state{
+    border: 3px solid #eee;
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+
+.board span.icon {
+    cursor: pointer;
+}
+
+.main-content .header-content .list li a .state.red, 
+.main-content .dashboard .board.red,
+.board .board-content .task.red {
+    border-color: #f95a6c;
+}
+
+.main-content .header-content .list li a .state.yellow,
+.main-content .dashboard .board.yellow,
+.board .board-content .task.yellow {
+    border-color: #f5a623;
+}
+
+.main-content .header-content .list li a .state.green,
+.main-content .dashboard .board.green,
+.board .board-content .task.green {
+    border-color: #3fe671;
+}
+
+.main-content .header-content .list li a .state.blue,
+.main-content .dashboard .board.blue,
+.board .board-content .task.blue {
+    border-color: #4378eb;
+}
+
+.main-content .dashboard {
+    padding: 30px;
+    overflow-y: scroll;
+    height: 80vh;
+}
+
+.main-content .dashboard .board {
+    background: #f1f1f0;
+    border-top: 2px solid #ddd;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.main-content .dashboard .board > header {
+    padding: 20px;
+    background: #2e4b54;
+    color: #bbb;
+    position: relative;
+    border-bottom: 1px solid rgba(109, 106, 106, 0.452);
+}
+
+.main-content .dashboard .board h4 {
+    margin: 0;
+    font-weight: 500;
+}
+
+.main-content .dashboard .board span.icon:before {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 21px;
+}
+
+.main-content .dashboard .board .board-content {
+    padding: 20px 30px 20px 5px;
+    overflow-y: scroll;
+    max-height: 600px;
+    position: relative;
+    right: -20px;
+}
+.board .board-content li {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+}
+.board .board-content .task {
+    border-left: 3px solid #38c3d5;
+    padding: 10px;
+    cursor: pointer;
+}
+.board .board-content .task header {
+    position: relative;
+}
+.board .board-content .task header h3 {
+    margin: 0;
+    padding: 10px;
+    font-weight: 500;
+    color: #444;
+}
+
+.board .board-content .task header span.icon:before {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 15px;
+    color: #777;
+}
+.board .board-content .task header span.icon:hover:before {
+    color: #4378eb;
+}
+
+.board .board-content .task .task-content{
+    padding: 0 10px 10px 10px;
+    line-height: 18px;
+    font-size: 11px;
+    color: #848691;
+    max-height: 38px;
+    overflow: hidden;
+}
+
+.board .board-content .task  .task-due-date{
+    padding: 0 10px 10px 10px;
+    line-height: 18px;
+    font-size: 11px;
+    color: #848691;
+    max-height: 38px;
+    overflow: hidden;
+
+}
+
+
+.board .board-content .task  .task-content-priority{
+    padding: 0 10px 10px 10px;
+    line-height: 18px;
+    font-size: 11px;
+    color: #848691;
+    max-height: 38px;
+    overflow: hidden;
+
+}
+
+@media screen and (max-width: 1024px) {
+    .wrapper .menu-left {
+        padding: 20px;
+    }
+    
+    .wrapper .menu-left .list {
+        display: flex;
+    }
+
+    #main-header .search {
+        display: none;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+#boardNameInput {
+    width: 80%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#createBoardButton {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#createBoardButton:hover {
+    background-color: #0056b3;
+}
+
+/*AddTask.html CSS*/
+
+
+        /* Header Styling */
+        #main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 15px 20px;
+            margin-left: 150px;
+            margin-right: 0px;
+        }
+
+        .account .avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #555;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .account .avatar .effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .search input {
+            background-color: #224a57;
+            border: none;
+            padding: 8px 12px;
+            color: #fff;
+            border-radius: 4px;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        .search input::placeholder {
+            color: #aaa;
+        }
+
+        /* Form Container Styling */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #351352; /* Matches header color */
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        .header-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #000000; /* Matches text color */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #bbb;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #f5edfc;
+            color: #555;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: none;
+        }
+
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .form-actions .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-blue {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-blue:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-red {
+            background-color: #dc3545;
+            color: #fff;
+        }
+
+        .btn-red:hover {
+            background-color: #a71d2a;
+        }
+
+    
+/*Status Dropdown*/
+/* Style the dropdown to fit the task theme */
+.status-dropdown {
+    background-color: #f4f4f4; /* Light background for dropdown */
+    border: 1px solid #ccc; /* Subtle border */
+    border-radius: 5px; /* Rounded edges */
+    padding: 5px 10px; /* Padding inside dropdown */
+    font-size: 14px; /* Font size for readability */
+    color: #000000; /* Text color */
+    outline: none; /* Remove focus outline */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
+    cursor: pointer;
+}
+
+/* Add hover and focus effects for better interactivity */
+.status-dropdown:hover,
+.status-dropdown:focus {
+    border-color: #666; /* Highlight border on hover or focus */
+    background-color: #eaeaea; /* Slightly darker background */
+}
+
+/* Specific colors for each task status */
+.status-dropdown option[value="pending"] {
+    color: orange; /* Pending tasks appear orange */
+}
+.status-dropdown option[value="inProgress"] {
+    color: blue; /* In Progress tasks appear blue */
+}
+.status-dropdown option[value="completed"] {
+    color: green; /* Completed tasks appear green */
+}
+
+
+/*Board styling*/
+/* General board styling */
+.board {
+    background: #f9f9f9; /* Light background for visibility */
+    border-radius: 10px;
+    padding: 0.5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Ensure boards take full width when filtered */
+.col-xl-4.col-sm-6 {
+    display: block; /* Maintain display property for visibility toggling */
+    width: 2000px; /* Full width to prevent narrow boards */
+    max-width: 1300px; /* Optional max-width for consistent sizing */
+    margin: 0 auto 20px; /* Centered with spacing below */
+}
+
+/* Header styling for each board */
+.board header {
+    font-size: 13px; /* Larger font for titles */
+    font-weight: bold;
+    color: #333; /* Darker text for readability */
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styling for board content */
+.board-content {
+    font-size: 12px;
+    color: #555; /* Subtle text color */
+    line-height: 1.6;
+}
+
+/* Task styling */
+.task {
+    background: #ffffff; /* White background for tasks */
+    border-radius: 8px;
+    padding: 0px;
+    margin-bottom: 0px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for tasks */
+}
+
+/* Task header styling */
+.task header {
+    font-size: 13px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Color coding for task types */
+.task.red { border-left: 4px solid #e74c3c; } /* Red for urgent tasks */
+.task.green { border-left: 4px solid #2ecc71; } /* Green for completed tasks */
+.task.yellow { border-left: 4px solid #f1c40f; } /* Yellow for pending tasks */
+.task.blue { border-left: 4px solid #618094; } /* Blue for general tasks */
+
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .col-xl-6.col-sm-6 {
+        width: 90%; /* Reduce width for smaller screens */
+    }
+
+    .board {
+        padding: 15px;
+    }
+
+    .task {
+        padding: 0px;
+    }
+}
+
